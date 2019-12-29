@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'
 
-const App = () => {
+function App() {
   return (
     <div> react app starter</div>
   )
 }
 
-export default App;
+export default App
