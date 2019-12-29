@@ -10,7 +10,7 @@
     "build:server": "webpack --config config/webpack.config.server.js",
     "build": "npm run clear && npm run build:client && npm run build:server",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.config.client.js",
-    "dev:server": "cross-env NODE_ENV=development node server/server.js",
+    "dev:server": "nodemon server/server.js",
     "lint": "eslint --ext .js --ext .jsx client/",
     "precommit": "npm run lint"
   },
@@ -32,7 +32,8 @@
     "axios": "^0.19.0",
     "express": "^4.17.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -56,12 +57,14 @@
     "http-proxy-middleware": "^0.20.0",
     "husky": "^3.1.0",
     "memory-fs": "^0.5.0",
+    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
     "react-hot-loader": "^4.12.18",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1"
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
   },
   "husky": {
     "hooks": {
