@@ -10,8 +10,9 @@
     "sourceType": "module"
   },
   "extends": "airbnb",
-    "rules": {
-      "semi": [0],
-      "react/jsx-filename-extension": [0]
-    }
+  "rules": {
+    "semi": [0],
+    "react/jsx-filename-extension": [0],
+    "jsx-ally/anchor-is-valid": [0]
+  }
 }
