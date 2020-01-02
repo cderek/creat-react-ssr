@@ -12,6 +12,7 @@
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config config/webpack.config.client.js",
     "dev:server": "nodemon server/server.js",
     "lint": "eslint --ext .js --ext .jsx client/",
+    "commit": "git-cz",
     "precommit": "npm run lint"
   },
   "repository": {
@@ -41,10 +42,14 @@
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.0",
     "babel-preset-es2015-loose": "^8.0.0",
+    "commitizen": "^4.0.3",
     "cross-env": "^6.0.3",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-standard": "^14.1.0",
@@ -68,8 +73,14 @@
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "husky": {
     "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-commit": "pretty-quick --staged --pattern '**/*.js' --pattern '**/*.css' --pattern '**/*.scss'"
     }
   }
